@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bank Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>🏦 MyBank</h2>
+
+        <ul>
+            <li onclick="showSection('dashboard')">📊 Dashboard</li>
+            <li onclick="showSection('create')">➕ Create Account</li>
+            <li onclick="showSection('accounts')">👥 All Accounts</li>
+            <li onclick="showSection('search')">🔍 Search Account</li>
+            <li onclick="showSection('transaction')">💰 Transactions</li>
+        </ul>
+
+        <div class="sidebar-bottom">
+            <p>Bank Management System</p>
+            <p>Version 1.0</p>
+        </div>
+
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <!-- Header -->
+        <header>
+            <div>
+                <h1>Bank Dashboard</h1>
+                <p>Welcome to MyBank Management System</p>
+            </div>
+
+            <div class="profile">
+                👤 Admin
+            </div>
+        </header>
+
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="section">
+
+            <h2>Dashboard Overview</h2>
+
+            <div class="cards">
+
+                <div class="card blue">
+                    <h3>Total Accounts</h3>
+                    <h1 id="totalAccounts">0</h1>
+                    <p>Registered Customers</p>
+                </div>
+
+                <div class="card green">
+                    <h3>Total Balance</h3>
+                    <h1 id="totalBalance">₹0</h1>
+                    <p>Available Bank Balance</p>
+                </div>
+
+                <div class="card orange">
+                    <h3>Total Deposits</h3>
+                    <h1 id="totalDeposits">₹0</h1>
+                    <p>Deposited Amount</p>
+                </div>
+
+                <div class="card red">
+                    <h3>Total Withdrawals</h3>
+                    <h1 id="totalWithdrawals">₹0</h1>
+                    <p>Withdrawn Amount</p>
+                </div>
+
+            </div>
+
+            <div class="welcome">
+                <h2>Welcome to MyBank 🏦</h2>
+                <p>
+                    Manage your bank accounts easily.
+                    Create accounts, deposit money, withdraw money
+                    and check account balances.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Create Account -->
+        <section id="create" class="section hidden">
+
+            <h2>Create New Account</h2>
+
+            <div class="form-box">
+
+                <form id="accountForm">
+
+                    <label>Account Number</label>
+                    <input type="number" id="accountNumber"
+                           placeholder="Enter account number" required>
+
+                    <label>Account Holder Name</label>
+                    <input type="text" id="accountName"
+                           placeholder="Enter full name" required>
+
+                    <label>Initial Balance (₹)</label>
+                    <input type="number" id="initialBalance"
+                           placeholder="Enter initial balance"
+                           min="0" step="0.01" required>
+
+                    <button type="submit">Create Account</button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- All Accounts -->
+        <section id="accounts" class="section hidden">
+
+            <h2>All Bank Accounts</h2>
+
+            <input type="text" id="tableSearch"
+                   placeholder="Search by name or account number..."
+                   oninput="displayAccounts()">
+
+            <div class="table-box">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Account Number</th>
+                            <th>Account Holder</th>
+                            <th>Balance</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="accountTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Search Account -->
+        <section id="search" class="section hidden">
+
+            <h2>Search Account</h2>
+
+            <div class="form-box">
+
+                <label>Enter Account Number</label>
+
+                <input type="number" id="searchNumber"
+                       placeholder="Account Number">
+
+                <button onclick="searchAccount()">
+                    Search Account
+                </button>
+
+                <div id="searchResult"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Transactions -->
+        <section id="transaction" class="section hidden">
+
+            <h2>Money Transactions</h2>
+
+            <div class="form-box">
+
+                <label>Account Number</label>
+
+                <input type="number" id="transactionNumber"
+                       placeholder="Enter account number">
+
+                <label>Amount (₹)</label>
+
+                <input type="number" id="amount"
+                       placeholder="Enter amount" min="0.01" step="0.01">
+
+                <div class="button-group">
+
+                    <button onclick="depositMoney()">
+                        Deposit
+                    </button>
+
+                    <button class="withdraw"
+                            onclick="withdrawMoney()">
+                        Withdraw
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 MyBank | Bank Management System
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
