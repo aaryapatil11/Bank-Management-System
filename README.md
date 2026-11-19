@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-The **Bank Management System** is a web-based application developed using HTML, CSS, and JavaScript. It provides a simple and interactive interface for managing bank accounts and performing basic banking operations.
+The **Bank Management System** is a console-based Bank Management System developed using Core Java, OOP concepts, and ArrayList.. It provides a simple and interactive interface for managing bank accounts and performing basic banking operations.
 
 The application allows users to create accounts, view account details, search accounts, deposit money, withdraw money, check balances, and delete accounts.
 
@@ -21,15 +21,16 @@ The application allows users to create accounts, view account details, search ac
 
 ## 🛠️ Technologies Used
 
+- Core Java
 - HTML5
 - CSS3
 - JavaScript
-- Browser Local Storage
 
 ## 📂 Project Structure
 
 BankManagementSystem/
 │
+├── Main.java
 ├── index.html
 ├── style.css
 ├── script.js
